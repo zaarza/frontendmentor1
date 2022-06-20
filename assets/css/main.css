@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/* Custom Properties */
+:root {
+  --color-1: hsl(0, 0%, 98%);
+  --color-2: hsl(0, 0%, 41%);
+  --color-3: hsl(0, 0%, 8%);
+  --f-f1: 'Epilogue', sans-serif;
+  --f-w500: 500;
+  --f-w700: 700;
+}
+
+/* Reset default styling */
+*, body, html, ::before,::after {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: var(--f-f1);
+}
+
+a {
+  color: var(--color-2);
+}
+
+/* Container */
+section.container {
+  position: relative;
+  background-color: var(--color-1);
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  max-width: 1280px;
+  margin: auto;
+  height: 100vh;
+}
+
+body {
+  background-color: var(--color-1);
+}
+
+/* Navigation bar */
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;      
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  max-width: 1280px;
+  background-color: var(--color-1);
+  z-index: 98;
+}
+
+.nav-left {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.nav-menu,
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-center {
+  text-align: center;
+}
+
+.hamburger-menu,
+.close-menu,
+.nav-center {
+  display: none;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+.features-dropdown,
+.company-dropdown {
+  background-color: var(--color-1);
+}
+
+/* End of navigation bar */
+/* Black overlay */
+.overlay-black {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.658);
+  display: none;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+}
+
+/* Dropdown */
+.features-dropdown {
+  /* padding-top: 25px;
+  padding-left: 25px; */
+
+  padding: 25px 12px;
+  margin-bottom: 15px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.company-dropdown {
+  /* padding-top: 25px;
+  padding-left: 25px; */
+  top: 100%;
+  right: 10px;
+  padding: 25px 12px;
+  margin-bottom: 15px;
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item a img {
+  transform-origin: 50% 50%;
+  scale: 1.2;
+}
+
+.dropdown-item a {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.features-dropdown.dropdown-active{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.082);
+  z-index: 999;
+}
+
+.company-dropdown.dropdown-active{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.082);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown p {
+  display: inline-block;
+  width: 100px;
+}
+
+.dropdown .arrow {
+  position: absolute;
+  transform: translateY(100%);
+  transition: 0.3s;
+  transform-origin: 50% 100%;
+  margin-left: -20px;
+}
+
+.arrow.features-arrow.arrow-active {
+  transform: rotate(180deg);
+}
+
+.arrow.company-arrow.arrow-active {
+  transform: rotate(180deg);
+}
+/* End of dropdown */
+
+/* Hero section */
+  section.hero {
+    margin-top: 85px;
+    display: flex;
+    padding: 10px 100px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  picture.hero-image {
+    order: 2;
+    width: 35%;
+    min-width: 300px;
+  }
+
+  picture.hero-image img {
+    width: 100%;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    order: 1;
+    width: 40%;
+    gap: 2.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(40px, 4vw, 70px);
+  }
+
+  
+  .hero-text p {
+    font-weight: 500;
+    color: var(--color-2);
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  .client {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    gap: 20px;
+  }
+
+  .client img {
+    min-width: 4px;
+  }
+/* End of hero section */
+
+/* Utilities */
+.pointer:hover {
+  cursor: pointer;
+}
+
+.btn-1 {
+  border: 2px solid var(--color-2);
+  border-radius: 15px;
+  padding: 15px 25px;
+}
+
+.btn-2 {
+  background-color: var(--color-3);
+  border-radius: 15px;
+  padding: 15px 25px;
+  box-shadow: none;
+  border: none;
+  width: max-content;
+}
+
+.btn-2 a {
+  color: var(--color-1);
+  font-weight: 700;
+}
+/* End of utilities */
+
+/* Responsive breakpoints */
+@media screen and (max-width: 915px) {
+  .nav-menu,
+  .nav-left,
+  .nav-right {
+    gap: 30px;
+}
+  .btn-1 {
+    padding: 15px 20px;
+  }
+
+  section.hero {
+    padding: 10px 80px;
+  }
+
+  .hero-text {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    background-color: var(--color-1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60vw;
+    padding: 15px;
+    transform: translateX(999px);
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .nav-container.nav-active {
+    transform: translateX(0px);
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .close-menu,
+  .hamburger-menu,
+  .nav-center,
+  .nav-container {
+    display: initial;
+  }
+
+  .close-menu {
+    align-self: flex-end;
+  }
+
+  .dropdown .arrow {
+    margin-left: 0%;
+  }
+
+  .btn-1 {
+    padding: 15px 0px;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .features-dropdown, .company-dropdown {
+    position: inherit;
+  }
+
+  .features-dropdown.dropdown-active,
+  .company-dropdown.dropdown-active {
+    box-shadow: 0px 0px 0px;
+    padding-bottom: 0px;
+    padding: 0px 25px;
+    margin-top: 20px
+  }
+
+  /* Hero section */
+  section.hero {
+    text-align: center;
+    flex-direction: column;
+    padding: 0 15px;
+    margin-top: 70px;
+  }
+
+  section.hero,
+  .hero-text {
+    gap: 30px;
+  }
+  
+  picture.hero-image img {
+    width: 100%;
+  }
+
+  .btn-2 {
+    margin: auto;
+  }
+
+  .client {
+    width: 100%;
+    bottom: -100px;
+    padding: 15px;
+  }
+
+  picture.hero-image {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+}
